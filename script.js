@@ -1,19 +1,35 @@
-let number = document;
+const operatorButtons = document.querySelectorAll('.operator');
+const clearButton = document.querySelectorAll('.clear');
+const numberButtons = document.querySelectorAll('.number');
+const equalsButton = document.querySelectorAll('.equals');
 
-function add(a, b) {
-  return a + b;
-}
-function subtract(a, b) {
-  return a - b;
-}
+operatorButtons.forEach((button) => {
+  button.addEventListener('click', function (e) {
+    var operator = e.target.id;
+    console.log(operator);
+  });
+});
 
-function divide(a, b) {
-  return a / b;
-}
+numberButtons.forEach((button) => {
+  button.addEventListener('click', function (e) {
+    var number = e.target.id;
+    console.log(number);
+  });
+});
 
-function multiply(a, b) {
-  return a * b;
-}
+equalsButton.forEach((button) => {
+  button.addEventListener('click', function (e) {
+    var equals = e.target.id;
+    console.log(equals);
+  });
+});
+
+clearButton.forEach((button) => {
+  button.addEventListener('click', function (e) {
+    var clear = e.target.id;
+    console.log(clear);
+  });
+});
 
 function operate(a, b, operator) {
   switch (operator) {
@@ -30,4 +46,19 @@ function operate(a, b, operator) {
       multiply(a, b);
       break;
   }
+}
+
+function add(a, b) {
+  return a + b;
+}
+function subtract(a, b) {
+  return a - b;
+}
+
+function divide(a, b) {
+  return a / b;
+}
+
+function multiply(a, b) {
+  return a * b;
 }

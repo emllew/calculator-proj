@@ -6,9 +6,11 @@ body {
 }
 
 .display {
-  width: 290px;
+  width: 270px;
+  text-align: right;
   justify-content: center;
   display: block;
+  padding: 20px;
   height: 50px;
   background-color: rgb(233, 230, 230);
   margin: 0 auto;
@@ -16,9 +18,9 @@ body {
 
 .calc {
   margin: 0 auto;
-  width: 550px;
-  height: 450px;
-  background-color: #c6dfcc;
+  width: 70vw;
+  height: 70vh;
+  background-color: #cfe4d3;
   border-radius: 50px;
   border-top-left-radius: 100%80px;
   border-top-right-radius: 100%80px;
@@ -28,8 +30,8 @@ body {
 
 button {
   margin: 6px;
-  width: 80px;
-  height: 75px;
+  width: 11vw;
+  height: 9vh;
   border-radius: 100px;
   border: none;
   box-shadow: 2px 2px 3px rgb(151, 157, 150);

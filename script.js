@@ -110,6 +110,7 @@ function operate(operator) {
   console.log(a + "a works don't touch it");
   let b = equalsArray.slice(opIndex + 1).join('');
   console.log(b + 'this is b');
+
   switch (operator) {
     case 'plus':
       plus(a, b);
@@ -140,13 +141,16 @@ function plus(a, b) {
   display.textContent = plus;
 }
 function minus(a, b) {
-  console.log(a - b);
+  let minus = a - b;
+  display.textContent = minus;
 }
 
 function divide(a, b) {
-  console.log(a / b);
+  let divide = a / b;
+  display.textContent = divide;
 }
 
 function multiply(a, b) {
-  console.log(a * b);
+  let multiply = a * b;
+  display.textContent = multiply;
 }

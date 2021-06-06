@@ -3,17 +3,24 @@ const numbers = document.querySelector('.numbers');
 const operators = document.querySelector('.operators');
 let buttonsData = [];
 let operator = '';
+var colors = ['#A9D6BF', '#5C7358', '#BED3AC', '#EAEBEF'];
 
+//make the number buttons
 for (let i = 0; i < 10; i++) {
   const numberButtons = document.createElement('button');
   numbers.appendChild(numberButtons);
   numberButtons.textContent = i;
   numberButtons.classList.add('number');
   numberButtons.setAttribute('id', i);
+  var random_color = colors[Math.floor(Math.random() * colors.length)];
+  numberButtons.setAttribute('style', `background:${random_color}`);
 }
 
+//make the operator buttons
 for (let i = 0; i < 6; i++) {
   const opButtons = document.createElement('button');
+  var random_color = colors[Math.floor(Math.random() * colors.length)];
+  opButtons.setAttribute('style', `background:${random_color}`);
   if (i === 0) {
     opButtons.textContent = '+';
     opButtons.classList.add('operator');
@@ -41,9 +48,8 @@ for (let i = 0; i < 6; i++) {
   }
   operators.appendChild(opButtons);
 }
-
+//add the event listeners to all buttons
 const buttons = document.querySelectorAll('button');
-
 buttons.forEach((button) => {
   button.addEventListener('click', (e) => {
     if (e.target.classList == 'clear') {
@@ -67,12 +73,9 @@ buttons.forEach((button) => {
           element == 'plus' ||
           element == 'minus'
       );
-
       console.log(operator + 'is the op from equals function');
       operate(operator);
     }
-
-    display.textContent = buttonsData;
   });
 });
 
@@ -88,10 +91,12 @@ function number(n) {
   console.log(number);
   buttonsData.push(number);
   console.log(...buttonsData);
+  display.textContent = buttonsData;
 }
 
 function clear() {
   buttonsData.splice(0, buttonsData.length);
+  display.textContent = '';
 }
 
 function operate(operator) {

@@ -1,5 +1,24 @@
 .display {
-  width: 500px;
+  width: 290px;
+  justify-content: center;
+  display: block;
   height: 50px;
   background-color: rgb(233, 230, 230);
+}
+
+.calc {
+  width: 450px;
+  height: 450px;
+  background-color: rgb(225, 240, 224);
+  border-radius: 50px;
+  border-top-left-radius: 100%80px;
+  border-top-right-radius: 100%80px;
+  border-bottom-left-radius: 100%80px;
+  border-bottom-right-radius: 100%80px;
+}
+
+button {
+  width: 90px;
+  height: 60px;
+  border-radius: 100px;
 }

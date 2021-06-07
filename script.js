@@ -3,7 +3,12 @@ const numbers = document.querySelector('.numbers');
 const operators = document.querySelector('.operators');
 let buttonsData = [];
 let operator = '';
-var colors = ['#A9D6BF', '#5C7358', '#BED3AC', '#EAEBEF'];
+var colors = [
+  'background: #A9D6BF; color: #484a49',
+  'background: #5C7358; color: #eff2ed',
+  'background: #BED3AC; color: #484a49',
+  'background: #EAEBEF; color: #484a49',
+];
 
 //make the number buttons
 for (let i = 0; i < 10; i++) {
@@ -13,30 +18,30 @@ for (let i = 0; i < 10; i++) {
   numberButtons.classList.add('number');
   numberButtons.setAttribute('id', i);
   var random_color = colors[Math.floor(Math.random() * colors.length)];
-  numberButtons.setAttribute('style', `background:${random_color}`);
+  numberButtons.setAttribute('style', `${random_color}`);
 }
 
 //make the operator buttons
 for (let i = 0; i < 6; i++) {
   const opButtons = document.createElement('button');
   var random_color = colors[Math.floor(Math.random() * colors.length)];
-  opButtons.setAttribute('style', `background:${random_color}`);
+  opButtons.setAttribute('style', `${random_color}`);
   if (i === 0) {
     opButtons.textContent = '+';
     opButtons.classList.add('operator');
-    opButtons.setAttribute('id', 'plus');
+    opButtons.setAttribute('id', '+');
   } else if (i === 1) {
     opButtons.textContent = '-';
     opButtons.classList.add('operator');
-    opButtons.setAttribute('id', 'minus');
+    opButtons.setAttribute('id', '-');
   } else if (i === 2) {
     opButtons.textContent = '*';
     opButtons.classList.add('operator');
-    opButtons.setAttribute('id', 'multiply');
+    opButtons.setAttribute('id', '×');
   } else if (i === 3) {
     opButtons.textContent = '/';
     opButtons.classList.add('operator');
-    opButtons.setAttribute('id', 'divide');
+    opButtons.setAttribute('id', '÷');
   } else if (i === 4) {
     opButtons.textContent = 'clear';
     opButtons.classList.add('clear');
@@ -44,7 +49,7 @@ for (let i = 0; i < 6; i++) {
   } else if (i === 5) {
     opButtons.textContent = '=';
     opButtons.classList.add('equals');
-    opButtons.setAttribute('id', 'equals');
+    opButtons.setAttribute('id', '=');
   }
   operators.appendChild(opButtons);
 }
@@ -68,10 +73,7 @@ buttons.forEach((button) => {
     if (e.target.classList == 'equals') {
       operator = buttonsData.find(
         (element) =>
-          element == 'multiply' ||
-          element == 'divide' ||
-          element == 'plus' ||
-          element == 'minus'
+          element == '×' || element == '÷' || element == '+' || element == '-'
       );
       console.log(operator + 'is the op from equals function');
       operate(operator);
@@ -84,6 +86,7 @@ function operatorSet(o) {
   console.log(operator);
   buttonsData.push(operator);
   console.log(...buttonsData);
+  display.textContent = buttonsData.join('');
 }
 
 function number(n) {
@@ -91,7 +94,7 @@ function number(n) {
   console.log(number);
   buttonsData.push(number);
   console.log(...buttonsData);
-  display.textContent = buttonsData;
+  display.textContent = buttonsData.join('');
 }
 
 function clear() {
@@ -112,19 +115,19 @@ function operate(operator) {
   console.log(b + 'this is b');
 
   switch (operator) {
-    case 'plus':
+    case '+':
       plus(a, b);
       console.log('the add switch works');
       break;
-    case 'minus':
+    case '-':
       minus(a, b);
       console.log('the minus switch works');
       break;
-    case 'multiply':
+    case '×':
       multiply(a, b);
       console.log('the multiply switch works');
       break;
-    case 'divide':
+    case '÷':
       divide(a, b);
       console.log('the divide switch works');
       break;

@@ -2,39 +2,44 @@ body {
   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande',
     'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
   font-size: 20px;
+}
+
+.calc {
   display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-items: center;
+  margin-top: 30px;
+  margin: 0 auto;
+  width: 600px;
+  height: 500px;
+  background-color: #cfe4d3;
+  border-top-left-radius: 20%80px;
+  border-top-right-radius: 20%80px;
+  border-bottom-left-radius: 20%80px;
+  border-bottom-right-radius: 20%80px;
 }
 
 .display {
-  width: 270px;
+  width: 500px;
   text-align: right;
-  justify-content: center;
   display: block;
-  padding: 20px;
+  padding: 10px;
   height: 50px;
   background-color: rgb(233, 230, 230);
   margin: 0 auto;
 }
 
-.calc {
-  margin: 0 auto;
-  width: 70vw;
-  height: 70vh;
-  background-color: #cfe4d3;
-  border-radius: 50px;
-  border-top-left-radius: 100%80px;
-  border-top-right-radius: 100%80px;
-  border-bottom-left-radius: 100%80px;
-  border-bottom-right-radius: 100%80px;
-}
-
 button {
-  margin: 6px;
-  width: 11vw;
-  height: 9vh;
+  margin: 7px;
+  width: 70px;
+  height: 70px;
   border-radius: 100px;
   border: none;
   box-shadow: 2px 2px 3px rgb(151, 157, 150);
+
+  font-size: 20px;
 }
 button:active {
   box-shadow: none;

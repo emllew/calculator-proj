@@ -4,10 +4,10 @@ const operators = document.querySelector('.operators');
 let buttonsData = [];
 let operator = '';
 var colors = [
-  'background: #C0D6A8; color: #484a49',
-  'background: #e7f7da; color: #484a49',
-  'background: #C4DFCE; color: #484a49',
-  'background: #A8D5BE; color: #484a49',
+  'background: #c4e0a6; color: #484a49',
+  'background: #ddf7c8; color: #484a49',
+  'background: #afe0c1; color: #484a49',
+  'background: #7ec29f; color: #484a49',
 ];
 
 //make the number buttons

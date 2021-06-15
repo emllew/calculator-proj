@@ -14,7 +14,7 @@ body {
   margin: 0 auto;
   width: 350px;
   min-height: 590px;
-  background-color: #adc5ac;
+  background-color: #c4e3c3;
   color: #484a49;
   border-top-left-radius: 20%80px;
   border-top-right-radius: 20%80px;
@@ -25,7 +25,7 @@ body {
   margin: 0 auto;
   width: 370px;
   min-height: 605px;
-  background-color: #cde6d1;
+  background-color: #d8e3d8;
   border-top-left-radius: 20%80px;
   border-top-right-radius: 20%80px;
   border-bottom-left-radius: 20%80px;
@@ -51,7 +51,7 @@ body {
   grid-template-columns: 1fr 1fr 1fr;
   grid-template-rows: auto;
   justify-items: stretch;
-  column-gap: 10px;
+  column-gap: 20px;
   row-gap: 10px;
   justify-content: center;
 }
@@ -68,7 +68,7 @@ body {
 button {
   height: 100%;
   width: 100%;
-  border-radius: 450px;
+  border-radius: 45px;
   border: 2px solid #6d7e6c;
   box-shadow: 2px 2px 3px rgb(151, 157, 150);
   font-size: 20px;

@@ -88,7 +88,7 @@ function operatorClick(o) {
   opButtonPressCount++;
   buttonsData.push(operator);
 
-  if (opButtonPressCount > 2) {
+  if (opButtonPressCount > 1) {
     //make a new array from the first 2 numbers (a and b)
     let secondOperatorArray = Array.from(buttonsData.slice(0, -1));
     console.log(secondOperatorArray + 'this is on second operator press');

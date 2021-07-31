@@ -26,6 +26,8 @@ body {
   width: 370px;
   min-height: 605px;
   background-color: #d8e3d8;
+  border: 1px solid #858f855e;
+  box-shadow: 0px 3px 8px rgb(180, 180, 180), inset 0px 2px 3px #fff;
   border-top-left-radius: 20%80px;
   border-top-right-radius: 20%80px;
   border-bottom-left-radius: 20%80px;
@@ -37,8 +39,9 @@ body {
   display: block;
   padding: 10px;
   height: 50px;
-  background-color: rgb(249, 244, 244);
-  border: 3px solid #6d7e6c;
+  background-color: rgb(243, 235, 235);
+  border: 1px solid #858f855e;
+  box-shadow: 0px 3px 8px rgb(180, 180, 180), inset 0px 2px 3px #fff;
   border-radius: 45px;
   margin: 0 auto;
   overflow: hidden;
@@ -69,8 +72,8 @@ button {
   height: 100%;
   width: 100%;
   border-radius: 45px;
-  border: 2px solid #6d7e6c;
-  box-shadow: 2px 2px 3px rgb(151, 157, 150);
+  border: 1px solid #858f855e;
+ box-shadow: 0px 3px 8px rgb(180, 180, 180), inset 0px 2px 3px #fff;
   font-size: 20px;
 }
 

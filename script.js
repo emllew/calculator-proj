@@ -72,26 +72,79 @@ buttons.forEach((button) => {
 
     if (e.target.classList == 'operator') {
       let o = button.id;
-      operatorSet(o);
+      operatorClick(o);
     }
 
     if (e.target.classList == 'equals') {
-      operate();
+      equals();
     }
   });
 });
 
-function operatorSet(o) {
+let opButtonPressCount = 0;
+
+function operatorClick(o) {
   operator = o;
+  opButtonPressCount++;
   buttonsData.push(operator);
-  console.log(...buttonsData);
+
+  if (opButtonPressCount > 2) {
+    //make a new array from the first 2 numbers (a and b)
+    let secondOperatorArray = Array.from(buttonsData.slice(0, -1));
+    console.log(secondOperatorArray + 'this is on second operator press');
+    //find the operator in the aray, a is before it and b is after it
+    let opLocation = secondOperatorArray.findIndex(function (op) {
+      return op === '+' || op === '-' || op === '*' || op === '/';
+    });
+    console.log(opLocation + ' this is op location');
+    let aArray = secondOperatorArray.slice(0, opLocation);
+    console.log(aArray + ' this is aArray');
+    let bArray = secondOperatorArray.slice(opLocation + 1);
+    console.log(bArray + ' this is bArray');
+    let a = aArray.join('');
+    console.log(a + ' this is a from the join');
+    let b = bArray.join('');
+    let result = operate(a, b, o);
+
+    let length = secondOperatorArray.length;
+
+    buttonsData.splice(0, length, result);
+
+    opButtonsPressCount = 0;
+
+    console.log(
+      buttonsData +
+        ' << this is after the splice, and this >> is the opbutton count >> ' +
+        opButtonsPressCount
+    );
+  }
   display.textContent = buttonsData.join('');
+}
+
+function equals() {
+  let o = buttonsData.find(function (op) {
+    return op === '+' || op === '-' || op === '*' || op === '/';
+  });
+  let opLocation = buttonsData.findIndex(function (op) {
+    return op === '+' || op === '-' || op === '*' || op === '/';
+  });
+  console.log(opLocation + ' this is op location');
+  let aArray = buttonsData.slice(0, opLocation);
+  console.log(aArray + ' this is aArray');
+  let bArray = buttonsData.slice(opLocation + 1);
+  console.log(bArray + ' this is bArray');
+  let a = aArray.join('');
+  console.log(a + ' this is a from the join');
+  let b = bArray.join('');
+  let result = operate(a, b, o);
+  display.textContent = result;
+  buttonsData.splice(0, buttonsData.length, result);
 }
 
 function number(n) {
   var number = n;
   buttonsData.push(number);
-  console.log(...buttonsData);
+  console.log(buttonsData + ' this is from number fn');
   display.textContent = buttonsData.join('');
 }
 
@@ -100,12 +153,18 @@ function clear() {
   display.textContent = '';
 }
 
-function operate() {
-  var equationArray = Array.from(buttonsData);
-  function getMathematicalValue(str) {
-    return new Function('return ' + str)();
+function operate(a, b, o) {
+  switch (o) {
+    case '+':
+      return parseInt(a) + parseInt(b);
+
+    case '-':
+      return parseInt(a) - parseInt(b);
+
+    case '*':
+      return parseInt(a) * parseInt(b);
+
+    case '/':
+      return parseInt(a) / parseInt(b);
   }
-  var answer = getMathematicalValue(equationArray.join(''));
-  console.log(answer);
-  display.textContent = answer;
 }

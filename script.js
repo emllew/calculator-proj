@@ -39,11 +39,11 @@ for (let i = 0; i < 6; i++) {
     opButtons.classList.add('operator');
     opButtons.setAttribute('id', '-');
   } else if (i === 2) {
-    opButtons.textContent = '×';
+    opButtons.textContent = '*';
     opButtons.classList.add('operator');
     opButtons.setAttribute('id', '*');
   } else if (i === 3) {
-    opButtons.textContent = '÷';
+    opButtons.textContent = '/';
     opButtons.classList.add('operator');
     opButtons.setAttribute('id', '/');
   } else if (i === 4) {
@@ -69,10 +69,12 @@ buttons.forEach((button) => {
       let n = button.id;
       number(n);
     }
+
     if (e.target.classList == 'operator') {
       let o = button.id;
       operatorClick(o);
     }
+
     if (e.target.classList == 'equals') {
       equals();
     }
@@ -80,24 +82,34 @@ buttons.forEach((button) => {
 });
 
 let opButtonPressCount = 0;
+
 function operatorClick(o) {
   operator = o;
   opButtonPressCount++;
   buttonsData.push(operator);
+
   if (opButtonPressCount > 1) {
     //make a new array from the first 2 numbers (a and b)
     let secondOperatorArray = Array.from(buttonsData.slice(0, -1));
+
     //find the operator in the aray, a is before it and b is after it
     let opLocation = secondOperatorArray.findIndex(function (op) {
       return op === '+' || op === '-' || op === '*' || op === '/';
     });
+
     let aArray = secondOperatorArray.slice(0, opLocation);
+
     let bArray = secondOperatorArray.slice(opLocation + 1);
+
     let a = aArray.join('');
+
     let b = bArray.join('');
     let result = operate(a, b, o);
+
     let length = secondOperatorArray.length;
+
     buttonsData.splice(0, length, result);
+
     opButtonsPressCount = 0;
   }
   display.textContent = buttonsData.join('');
